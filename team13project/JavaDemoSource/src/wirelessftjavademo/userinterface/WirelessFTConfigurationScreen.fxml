@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane id="AnchorPane" minHeight="270.0" prefHeight="523.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.WirelessFTConfigurationScreenController">
+  <children>
+    <AnchorPane fx:id="m_paneFilCal" layoutX="135.0" prefHeight="440.0" prefWidth="452.0" visible="false">
+      <children>
+        <Label alignment="TOP_LEFT" layoutX="2.0" layoutY="1.0" prefHeight="20.0" prefWidth="443.0" text="Filters, Calibrations, and Units" underline="true" />
+        <ComboBox fx:id="m_cmbFilCalTrans" layoutX="12.0" layoutY="36.0" onAction="#m_cmbFilCalTrans_Changed" prefHeight="25.0" prefWidth="173.0" promptText="Transducer #" visibleRowCount="6">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="205.0" prefHeight="30.0" prefWidth="404.0">
+          <children>
+            <Label fx:id="m_lblAveraging" cache="true" prefHeight="17.0" prefWidth="197.0" text="Number of samples:" HBox.margin="$x5" />
+            <TextField fx:id="m_txtAveraging" alignment="CENTER" disable="true" onAction="#m_txtAveraging_Changed" onMouseExited="#m_txtAveraging_Changed" prefHeight="27.0" prefWidth="124.0" promptText="1 - 32" text="" />
+          </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="9.0" layoutY="262.0" prefHeight="21.0" prefWidth="435.0" spacing="10.0">
+          <children>
+            <Label prefHeight="17.0" prefWidth="105.0" text="Active Cal:">
+              <HBox.margin>
+                <Insets right="5.0" />
+              </HBox.margin>
+            </Label>
+                  <RadioButton fx:id="m_rbDefault" disable="true" mnemonicParsing="false" onAction="#calibrationIndexChanged" prefHeight="17.0" prefWidth="105.0" text="Default" />
+            <RadioButton fx:id="m_rb1" disable="true" mnemonicParsing="false" onAction="#calibrationIndexChanged" text="1">
+              <HBox.margin>
+                <Insets left="5.0" right="10.0" />
+              </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="m_rb2" disable="true" mnemonicParsing="false" onAction="#calibrationIndexChanged" text="2">
+              <HBox.margin>
+                <Insets right="10.0" />
+              </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="m_rb3" disable="true" mnemonicParsing="false" onAction="#calibrationIndexChanged" text="3" />
+          </children>
+        </HBox>
+            <HBox layoutX="9.0" layoutY="89.0" prefHeight="92.0" prefWidth="435.0">
+               <children>
+            <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="117.0" text="Filtering Type:" />
+                  <VBox alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="313.0">
+                     <children>
+                        <RadioButton fx:id="m_rbNone" alignment="CENTER_LEFT" disable="true" mnemonicParsing="false" onAction="#filterTypeChanged" prefHeight="29.0" prefWidth="230.0" text="No Filtering" />
+                  <RadioButton fx:id="m_rbMean" alignment="CENTER_LEFT" disable="true" mnemonicParsing="false" onAction="#filterTypeChanged" prefHeight="29.0" prefWidth="230.0" text="Running Mean" />
+                  <RadioButton fx:id="m_rbMedian" alignment="CENTER_LEFT" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#filterTypeChanged" prefHeight="29.0" prefWidth="230.0" text="Running Median" />
+                  <RadioButton fx:id="m_rbIIR" alignment="CENTER_LEFT" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#filterTypeChanged" prefHeight="29.0" prefWidth="230.0" text="IIR" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Separator layoutY="305.0" prefHeight="2.0" prefWidth="404.0" />
+            <Label layoutX="12.0" layoutY="344.0" prefHeight="17.0" prefWidth="149.0" text="Force Units" />
+            <Label layoutX="176.0" layoutY="344.0" prefHeight="17.0" prefWidth="149.0" text="Torque Units" />
+            <ComboBox fx:id="m_cmbForce" layoutX="12.0" layoutY="377.0" onAction="#m_cmbForce_Changed" prefHeight="25.0" prefWidth="149.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Item 1" />
+                     <String fx:value="Item 2" />
+                     <String fx:value="Item 3" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <ComboBox fx:id="m_cmbTorque" layoutX="176.0" layoutY="377.0" onAction="#m_cmbTorque_Changed" prefHeight="25.0" prefWidth="149.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Item 1" />
+                     <String fx:value="Item 2" />
+                     <String fx:value="Item 3" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+      </children>
+    </AnchorPane>
+    <Region prefHeight="400.0" prefWidth="134.0" style="-fx-background-color: lightGRAY;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <ImageView fitHeight="54.0" fitWidth="126.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@icon.png" />
+      </image>
+    </ImageView>
+    <AnchorPane fx:id="m_paneReady" layoutX="135.0" prefHeight="416.0" prefWidth="452.0" visible="false">
+      <children>
+        <Label layoutX="7.0" layoutY="6.0" prefHeight="17.0" prefWidth="435.0" text="Profile Ready" underline="true" />
+        <Label layoutX="14.0" layoutY="28.0" prefHeight="285.0" prefWidth="420.0" text="Your Wireless F/T profile is ready to use. If you need to make changes, you can reopen this form via the &quot;Edit Profile&quot; option on the startup menu. Settings are applied at the time of connection using the selected profile for each individual run of the demo software, but you can save them to the Wireless F/T itself as well from the main screen." textAlignment="JUSTIFY" wrapText="true" />
+      </children>
+    </AnchorPane>
+    <CheckBox id="m_checkActive" fx:id="m_chkDefault" layoutX="151.0" layoutY="443.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="435.0" selected="true" text="Make this my default profile" />
+    <HBox alignment="CENTER" fillHeight="true" layoutX="140.0" layoutY="498.0" minHeight="16.0" prefHeight="23.0" prefWidth="356.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="498.0">
+      <children>
+        <Button fx:id="m_btnCancel" mnemonicParsing="false" onAction="#m_btnCancelPressed" prefWidth="100.0" text="Cancel">
+          <HBox.margin>
+            <Insets right="40.0" />
+          </HBox.margin>
+        </Button>
+        <Button fx:id="m_btnBack" disable="true" mnemonicParsing="false" onAction="#m_btnBackPressed" prefWidth="100.0" text="&lt; Back" />
+        <Button fx:id="m_btnNext" mnemonicParsing="false" onAction="#m_btnNextPressed" prefWidth="100.0" text="Next &gt;" />
+        <Button fx:id="m_btnFinish" mnemonicParsing="false" onAction="#m_btnFinishPressed" prefWidth="100.0" text="Finish" />
+      </children>
+    </HBox>
+    <AnchorPane fx:id="m_paneWelcome" layoutX="143.0" layoutY="9.0" prefHeight="428.0" prefWidth="435.0" visible="false">
+      <children>
+        <Label layoutX="7.0" layoutY="6.0" text="Profile Creation Wizard" underline="true" />
+        <Label layoutX="7.0" layoutY="28.0" prefHeight="141.0" prefWidth="418.0" text="Welcome to the Wireless Force/Torque Profile Setup Wizard. This wizard will guide you through the various settings for your Wireless F/T sensor.&#10;&#10;Notes on this Profile:" textAlignment="JUSTIFY" wrapText="true" />
+            <TextArea id="m_Notes" fx:id="m_Notes" layoutX="3.0" layoutY="169.0" onKeyReleased="#notesChanged" prefHeight="246.0" prefWidth="420.0" wrapText="true" />
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="m_paneTT" layoutX="135.0" layoutY="12.0" minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="452.0">
+      <children>
+            <Label alignment="TOP_LEFT" layoutX="1.0" layoutY="-1.0" prefHeight="17.0" prefWidth="435.0" text="Tool Transformation Settings" underline="true" />
+        <Label contentDisplay="CENTER" layoutX="9.0" layoutY="275.0" prefHeight="100.0" prefWidth="435.0" text="NOTE: Displacements and rotation settings are applied in the following order: Dx, Dy, Dz, Rx, Ry, Rz." wrapText="true" />
+    <HBox layoutX="8.0" layoutY="108.0" prefWidth="208.0">
+               <children>
+        <ToggleButton fx:id="m_toggleButtonIN" disable="true" minWidth="40.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="40.0" text="in">
+          <HBox.margin>
+            <Insets right="2.0" fx:id="x3" />
+          </HBox.margin>
+        </ToggleButton>
+        <ToggleButton fx:id="m_toggleButtonFT" disable="true" minWidth="40.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="40.0" text="ft" HBox.margin="$x3" />
+        <ToggleButton fx:id="m_toggleButtonM" disable="true" minWidth="40.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="40.0" text="m" HBox.margin="$x3" />
+        <ToggleButton fx:id="m_toggleButtonCM" disable="true" minWidth="48.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="48.0" text="cm" HBox.margin="$x3" />
+        <ToggleButton fx:id="m_toggleButtonMM" disable="true" minWidth="58.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="58.0" text="mm">
+          <HBox.margin>
+            <Insets fx:id="x4d" />
+          </HBox.margin>
+        </ToggleButton>
+               </children>
+    </HBox>
+            <HBox layoutX="250.0" layoutY="109.0" prefWidth="180.0">
+               <children>
+        <ToggleButton fx:id="m_toggleButtonDEGREES" disable="true" minWidth="90.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="90.0" text="Degrees" />
+        <ToggleButton fx:id="m_toggleButtonRADIANS" disable="true" minWidth="90.0" mnemonicParsing="false" onAction="#updateToolTransform" prefWidth="90.0" text="Radians" />
+               </children>
+            </HBox>
+    <Label alignment="CENTER" layoutX="9.0" layoutY="83.0" prefHeight="17.0" prefWidth="149.0" style="" text="Displacements" textAlignment="LEFT" />
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="270.0" layoutY="76.0" prefHeight="30.0" prefWidth="125.0" text="Rotations" />
+  <TextField id="m_lblDisplacementZ" fx:id="m_txtDisplacementZ" alignment="CENTER" disable="true" layoutX="75.0" layoutY="229.0" onAction="#updateToolTransform" onMouseExited="#updateToolTransform" prefWidth="80.0" promptText="" text="0.0" />
+  <TextField id="m_lblDisplacementZ" fx:id="m_txtRotationsZ" alignment="CENTER" disable="true" layoutX="298.0" layoutY="228.0" onAction="#updateToolTransform" onMouseExited="#updateToolTransform" prefWidth="80.0" promptText="" text="0.0" />
+  <Label layoutX="32.0" layoutY="235.0" text="DZ:" />
+  <Label layoutX="259.0" layoutY="233.0" text="RZ:" />
+        <Button fx:id="m_btnReset" disable="true" layoutX="111.0" layoutY="376.0" mnemonicParsing="false" onAction="#m_btnResetPressed" prefHeight="25.0" prefWidth="216.0" text="Clear Transformation" textAlignment="CENTER" />
+  <TextField id="m_lblDisplacementY" fx:id="m_txtRotationsY" alignment="CENTER" disable="true" layoutX="297.0" layoutY="197.0" onAction="#updateToolTransform" onMouseExited="#updateToolTransform" prefWidth="80.0" promptText="" text="0.0" />
+  <Label layoutX="258.0" layoutY="203.0" text="RY:" />
+  <TextField id="m_lblDisplacementY" fx:id="m_txtDisplacementY" alignment="CENTER" disable="true" layoutX="76.0" layoutY="195.0" onAction="#updateToolTransform" onMouseExited="#updateToolTransform" prefWidth="80.0" promptText="" text="0.0" />
+  <Label layoutX="32.0" layoutY="201.0" text="DY:" />
+        <ComboBox fx:id="m_cmbTTTrans" layoutX="16.0" layoutY="34.0" onAction="#m_cmbTTTrans_Changed" prefHeight="25.0" prefWidth="200.0" promptText="Transducer #" visibleRowCount="6">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+  <TextField id="m_lblDisplacementX" fx:id="m_txtDisplacementX" alignment="CENTER" disable="true" layoutX="74.0" layoutY="164.0" onAction="#updateToolTransform" onMouseExited="#updateToolTransform" prefWidth="80.0" promptText="" text="0.0" />
+  <Label layoutX="32.0" layoutY="172.0" text="DX:" />
+  <Label layoutX="258.0" layoutY="173.0" text="RX:" />
+      <TextField id="m_lblDisplacementX" fx:id="m_txtRotationsX" alignment="CENTER" disable="true" layoutX="297.0" layoutY="167.0" onAction="#updateToolTransform" onMouseExited="#updateToolTransform" prefHeight="27.0" prefWidth="81.0" promptText="" text="0.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="m_paneModel" layoutX="134.0" layoutY="3.0" prefHeight="440.0" prefWidth="452.0" visible="false">
+      <children>
+        <Label layoutX="4.0" layoutY="10.0" text="Wireless F/T Model" underline="true" />
+        <Label layoutX="14.0" layoutY="63.0" prefHeight="34.0" prefWidth="252.0" text="Transducer ports on device:" textAlignment="JUSTIFY" wrapText="true" />
+        <ToggleButton fx:id="m_wnet3Toggle" layoutX="280.0" layoutY="67.0" mnemonicParsing="false" onAction="#ShowCorrectTransducers" selected="true" text="3" />
+        <ToggleButton fx:id="m_wnet6Toggle" layoutX="355.0" layoutY="67.0" mnemonicParsing="false" onAction="#ShowCorrectTransducers" text="6" />
+        <Label layoutX="13.0" layoutY="117.0" prefHeight="22.0" prefWidth="427.0" text="Select Active Transducers:" underline="true" />
+            <VBox alignment="CENTER" layoutX="24.0" layoutY="163.0" prefHeight="81.0" prefWidth="404.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="324.0">
+                     <children>
+                        <ToggleButton fx:id="m_t1Toggle" mnemonicParsing="false" onAction="#activeTransducersChanged" prefWidth="166.0" text="Transducer 1" />
+                        <ToggleButton fx:id="m_t4Toggle" mnemonicParsing="false" onAction="#activeTransducersChanged" prefWidth="166.0" text="Transducer 4" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="324.0">
+                     <children>
+                        <ToggleButton fx:id="m_t2Toggle" mnemonicParsing="false" onAction="#activeTransducersChanged" prefWidth="166.0" text="Transducer 2" />
+                        <ToggleButton fx:id="m_t5Toggle" mnemonicParsing="false" onAction="#activeTransducersChanged" prefWidth="166.0" text="Transducer 5" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="324.0">
+                     <children>
+                        <ToggleButton fx:id="m_t3Toggle" mnemonicParsing="false" onAction="#activeTransducersChanged" prefWidth="166.0" text="Transducer 3" />
+                        <ToggleButton fx:id="m_t6Toggle" mnemonicParsing="false" onAction="#activeTransducersChanged" prefWidth="166.0" text="Transducer 6" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" layoutX="5.0" layoutY="276.0" prefHeight="149.0" prefWidth="443.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="443.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="180.0" text="Packet Rate (5-4000):" underline="false">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField id="m_udpRate" fx:id="m_txtRate" alignment="CENTER" onAction="#m_txtRate_Changed" onInputMethodTextChanged="#m_txtRate_Changed" onMouseExited="#m_txtRate_Changed" prefHeight="27.0" prefWidth="80.0" text="125" />
+                        <Label id="m_udpRateLabel" prefHeight="27.0" prefWidth="175.0" text="packets/second" textAlignment="LEFT" wrapText="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="254.0">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="180.0" text="Oversample Rate:">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="m_txtOversamp" alignment="CENTER" onAction="#m_txtOversamp_Changed" onMouseExited="#m_txtOversamp_Changed" prefHeight="27.0" prefWidth="80.0" promptText="1 - 32" text="" />
+                        <Label id="m_udpRateLabel" prefHeight="27.0" prefWidth="162.0" text="times" textAlignment="LEFT" wrapText="true" />
+                     </children>
+                  </HBox>
+            <CheckBox fx:id="m_chkSD" mnemonicParsing="false" onAction="#m_chkSD_Changed" prefHeight="36.0" prefWidth="442.0" text="Also save transducer data to MicroSD card" />
+               </children>
+            </VBox>
+      </children>
+    </AnchorPane>
+      <AnchorPane fx:id="m_paneNTP" layoutX="135.0" prefHeight="428.0" prefWidth="452.0" visible="false">
+         <children>
+            <Label layoutX="2.0" prefHeight="17.0" prefWidth="443.0" text="Network Time Protocol (NTP)" underline="true" />
+            <CheckBox fx:id="m_chkUseNtp" layoutX="9.0" layoutY="41.0" mnemonicParsing="false" onAction="#UpdateUseNtp" prefHeight="17.0" prefWidth="435.0" text="Use NTP" />
+            <HBox alignment="CENTER" layoutY="79.0" prefHeight="27.0" prefWidth="458.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="116.0" text="NTP server: " />
+                  <TextField id="m_lblDisplacementZ" fx:id="m_txtNtpServer" onAction="#UpdateNtpServer" prefHeight="27.0" prefWidth="336.0" promptText="" />
+               </children>
+            </HBox>
+            <Label contentDisplay="CENTER" layoutX="6.0" layoutY="111.0" prefHeight="81.0" prefWidth="435.0" text="Note: For best results you may want to install an NTP server on your local machine and point to it here. " wrapText="true" />
+            <HBox layoutX="6.0" layoutY="192.0" prefHeight="27.0" prefWidth="435.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="264.0" text="Time Zone offset from UTC:" wrapText="true" />
+                  <TextField id="m_lblDisplacementZ" fx:id="m_txtZoneHours" alignment="CENTER" minWidth="56.0" onAction="#UpdateZoneHours" prefHeight="27.0" prefWidth="56.0" promptText="" text="00" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="15.0" text=":" wrapText="true" />
+                  <TextField id="m_lblDisplacementZ" fx:id="m_txtZoneMinutes" alignment="CENTER" minWidth="56.0" onAction="#UpdateZoneMinutes" prefHeight="27.0" prefWidth="56.0" promptText="" text="00" />
+               </children>
+            </HBox>
+            <Label contentDisplay="CENTER" layoutX="2.0" layoutY="224.0" prefHeight="167.0" prefWidth="443.0" text="Note: UTC is Coordinated Universal Time. See a list of time zone offsets at http://en.wikipedia.org/wiki/List_of_UTC_time_offsets. UTC time offsets range from UTC-12:00 in the west to UTC+14:00 in the east." wrapText="true" />
+            <CheckBox fx:id="m_chkUseDst" layoutX="10.0" layoutY="397.0" mnemonicParsing="false" onAction="#UpdateUseDst" prefHeight="17.0" prefWidth="427.0" text="Daylight Savings Time" />
+         </children>
+      </AnchorPane>
+  </children>
+  <stylesheets>
+    <URL value="@WirelessFTDemo.css" />
+  </stylesheets>
+</AnchorPane>

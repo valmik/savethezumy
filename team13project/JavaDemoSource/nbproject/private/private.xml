@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="11">
+        <file>
+            <url>src/wirelessftjavademo/userinterface/WirelessFTSensorPanel.java</url>
+            <bookmark id="11">
+                <name/>
+                <line>493</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/wirelessftjavademo/userinterface/WirelessFTDemoMainScreen.fxml.bak</url>
+            <bookmark id="2">
+                <name/>
+                <line>37</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/wirelessftjavademo/WirelessFTDemoModel.java</url>
+            <bookmark id="10">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/wirelessftjavademo/userinterface/WirelessFTDemoMainScreenController.java</url>
+            <bookmark id="6">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/wirelessftjavademo/userinterface/FileUploadScreenController.java</url>
+            <bookmark id="8">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+            <bookmark id="5">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftjavademo/userinterface/WirelessFTSensorPanel.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftjavademo/userinterface/WirelessFTDemoMainScreenController.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/test/wirelessftsensor/WirelessFTSensorTest.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftsensor/WirelessFTSensor.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftjavademo/userinterface/FileExtractScreenController.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftsensor/WirelessFTSample.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftjavademo/userinterface/FileUploadScreenController.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/src/wirelessftjavademo/WirelessFTDemoModel.java</file>
+            <file>file:/C:/JavaProjects/9030-05-1011_Wireless_FT_Java_Demo/test/wirelessftjavademo/CalibrationTest.java</file>
+        </group>
+    </open-files>
+</project-private>

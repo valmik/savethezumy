@@ -1,0 +1,8 @@
+prefix=/home/team13/team13project/devel
+
+Name: savethezumy
+Description: Description of savethezumy
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/team13/team13project/devel/lib 
+Requires: 

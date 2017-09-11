@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "test")
+set(test_MAINTAINER "team13 <team13@todo.todo>")
+set(test_DEPRECATED "")
+set(test_VERSION "0.0.0")
+set(test_BUILD_DEPENDS )
+set(test_RUN_DEPENDS )
+set(test_BUILDTOOL_DEPENDS "catkin")

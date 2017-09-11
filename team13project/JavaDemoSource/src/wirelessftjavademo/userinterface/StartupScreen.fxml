@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="205.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.StartupScreenController">
+  <children>
+    <SplitPane dividerPositions="0.24925373955389335" focusTraversable="true" prefHeight="372.0" prefWidth="572.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="180.0" style="-fx-background-color: GRAY">
+          <children>
+            <VBox alignment="TOP_CENTER" prefHeight="343.0" prefWidth="140.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+              <children>
+                <Label contentDisplay="LEFT" prefHeight="26.0" prefWidth="140.0" text="Profile" textFill="WHITE" underline="true">
+                  <font>
+                    <Font size="16.0" fx:id="x1" />
+                  </font>
+                  <VBox.margin>
+                    <Insets left="-5.0" top="2.0" />
+                  </VBox.margin>
+                </Label>
+                <Button fx:id="m_btnCreate" mnemonicParsing="false" onAction="#m_btnCreatePressed" prefHeight="25.0" prefWidth="150.0" style="" text="Create new...">
+                  <VBox.margin>
+                    <Insets top="16.0" />
+                  </VBox.margin>
+                </Button>
+                <Button fx:id="m_btnEdit" mnemonicParsing="false" onAction="#m_btnEditPressed" prefHeight="25.0" prefWidth="150.0" style="" text="Edit profile...">
+                  <VBox.margin>
+                    <Insets top="10.0" />
+                  </VBox.margin>
+                </Button>
+              </children>
+            </VBox>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <children>
+            <VBox prefHeight="127.0" prefWidth="419.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="15.0">
+              <children>
+                <Label contentDisplay="LEFT" font="$x1" prefHeight="26.0" prefWidth="565.0" text="Setup" underline="true">
+                  <VBox.margin>
+                    <Insets left="3.0" top="1.0" />
+                  </VBox.margin>
+                </Label>
+                <HBox prefHeight="20.999900000002526" prefWidth="418.0">
+                  <children>
+                    <Label prefHeight="21.0" prefWidth="139.0" text="Current profile:">
+                      <HBox.margin>
+                        <Insets right="5.0" />
+                      </HBox.margin>
+                    </Label>
+                    <TextField fx:id="m_txtProfile" prefHeight="25.0" prefWidth="526.0" promptText="&lt;no profile selected&gt;" />
+                    <Button fx:id="m_btnDots" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#m_btnChooseProfileFile" text="...">
+                      <HBox.margin>
+                        <Insets left="5.0" />
+                      </HBox.margin>
+                    </Button>
+                  </children>
+                  <VBox.margin>
+                    <Insets top="15.0" fx:id="x2" />
+                  </VBox.margin>
+                </HBox>
+                <CheckBox fx:id="m_chkSave" mnemonicParsing="false" prefHeight="17.0" prefWidth="565.0" selected="true" text="Save profile settings to my Wireless F/T">
+                  <VBox.margin>
+                    <Insets left="5.0" top="5.0" />
+                  </VBox.margin>
+                </CheckBox>
+              </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="368.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+              <children>
+                <Button fx:id="m_btnClose" mnemonicParsing="false" onAction="#m_btnClosePressed" prefWidth="150.0" style="" text="Close" />
+                <Button fx:id="m_btnStart" mnemonicParsing="false" onAction="#m_btnStartPressed" prefWidth="150.0" style="" text="Start" />
+              </children>
+            </HBox>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+  </children>
+</AnchorPane>

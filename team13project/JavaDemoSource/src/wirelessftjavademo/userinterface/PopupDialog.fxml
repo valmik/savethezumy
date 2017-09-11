@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.PopupDialogController">
+  <children>
+    <Label fx:id="m_lblMessage" alignment="CENTER" layoutX="5.0" layoutY="3.0" prefHeight="230.0" prefWidth="554.0" text="" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+    <Button fx:id="m_btnOK" layoutX="209.0" layoutY="251.0" mnemonicParsing="false" onAction="#m_btnOKPressed" prefHeight="25.0" prefWidth="146.0" text="OK" />
+  </children>
+</AnchorPane>

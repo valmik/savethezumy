@@ -1,0 +1,2 @@
+ati_wnet_ft:savethezumy
+-DCATKIN_DEVEL_PREFIX=/home/team13/team13project/devel -DCMAKE_INSTALL_PREFIX=/home/team13/team13project/install -G Unix Makefiles

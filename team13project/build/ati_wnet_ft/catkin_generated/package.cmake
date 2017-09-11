@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ati_wnet_ft")
+set(ati_wnet_ft_MAINTAINER "abestick <abestick@todo.todo>")
+set(ati_wnet_ft_DEPRECATED "")
+set(ati_wnet_ft_VERSION "0.0.0")
+set(ati_wnet_ft_BUILD_DEPENDS "geometry_msgs" "rospy" "std_msgs")
+set(ati_wnet_ft_RUN_DEPENDS "geometry_msgs" "rospy" "std_msgs")
+set(ati_wnet_ft_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,8 @@
+prefix=/home/team13/team13project/install
+
+Name: lab6
+Description: Description of lab6
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/team13/team13project/install/lib 
+Requires: 

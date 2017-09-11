@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" focusTraversable="false" prefHeight="446.0" prefWidth="767.0" styleClass="mainFxmlClass" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.WirelessFTCalibrationInfoScreenController">
+  <children>
+    <HBox alignment="CENTER" fillHeight="true" layoutX="6.0" layoutY="413.0" prefHeight="29.0" prefWidth="754.0" spacing="132.0" style="">
+      <children>
+        <Button fx:id="m_btnApplyRefresh" mnemonicParsing="false" onAction="#applyButtonAction" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 3 0 0 3;" text="Apply">
+          <HBox.margin>
+            <Insets right="1.0" />
+          </HBox.margin>
+        </Button>
+        <Button fx:id="m_btnOkay" defaultButton="false" mnemonicParsing="false" onAction="#okayButtonAction" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 0 3 3 0;" text="OK">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+        <Button cancelButton="true" defaultButton="false" mnemonicParsing="false" onAction="#cancelButtonAction" prefWidth="150.0" text="Cancel" />
+      </children>
+    </HBox>
+    <TabPane prefHeight="395.0" prefWidth="708.0" style="" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <tabs>
+        <Tab closable="true" style="" text="Transducer / Calibration Info">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="296.0" prefWidth="708.0">
+              <children>
+                <GridPane layoutX="185.0" prefHeight="366.0" prefWidth="579.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <Label alignment="CENTER" prefHeight="25.0" prefWidth="124.0" text="Calibration 1" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                      <font>
+                        <Font size="14.0" fx:id="x1" />
+                      </font>
+                    </Label>
+                    <GridPane prefWidth="221.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                      <children>
+                        <Label fx:id="m_lblCal2Serial" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="m_lblCal2Date" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="m_lblCal2Force" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="m_lblCal2Torque" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label fx:id="m_lblCal2PartNumber" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                    <Label alignment="CENTER" font="$x1" prefHeight="25.0" prefWidth="132.0" text="Calibration 2" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label alignment="CENTER" font="$x1" prefHeight="25.0" prefWidth="131.0" text="Calibration 3" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                    <GridPane prefWidth="221.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                      <children>
+                        <Label fx:id="m_lblCal3Serial" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="m_lblCal3PartNumber" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="m_lblCal3Date" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="m_lblCal3Force" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="m_lblCal3Torque" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                    <GridPane prefHeight="242.0" prefWidth="142.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                      <children>
+                        <Label prefHeight="43.0" prefWidth="301.0" text="Serial number" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label prefHeight="43.0" prefWidth="301.0" text="Part number" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label prefHeight="43.0" prefWidth="301.0" text="Torque Range, max" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label prefHeight="43.0" prefWidth="301.0" text="Force Range, max" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label prefHeight="43.0" prefWidth="301.0" text="Calibration date" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                    <GridPane prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <children>
+                        <Label fx:id="m_lblCal1Serial" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label fx:id="m_lblCal1PartNumber" alignment="CENTER" prefHeight="24.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="m_lblCal1Date" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="m_lblCal1Force" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="m_lblCal1Torque" alignment="CENTER" prefHeight="25.0" prefWidth="220.0" text="n/a" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                              <Label fx:id="m_tabLabelTransducer" prefHeight="25.0" prefWidth="151.0" text="Transducer  ">
+                                 <font>
+                                    <Font size="14.0" fx:id="x11" />
+                                 </font>
+                              </Label>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="166.0" />
+                    <ColumnConstraints hgrow="ALWAYS" maxWidth="336.0" minWidth="10.0" prefWidth="128.0" />
+                    <ColumnConstraints hgrow="ALWAYS" maxWidth="467.0" minWidth="10.0" prefWidth="130.0" />
+                    <ColumnConstraints hgrow="ALWAYS" maxWidth="467.0" minWidth="10.0" prefWidth="130.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="53.333335876464844" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="313.3333282470703" minHeight="10.0" prefHeight="312.66666412353516" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+                <Accordion id="" fx:id="m_accordionTransducer" layoutY="7.0" minWidth="137.0" prefHeight="359.0" prefWidth="151.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="606.0" AnchorPane.topAnchor="7.0">
+                  <panes>
+                    <TitledPane fx:id="m_AccTitledPane1" animated="false" expanded="false" text="Transducer 1">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="140.0" styleClass="anchor-pane">
+                          <children>
+                            <VBox layoutY="-3.0" prefWidth="145.0">
+                              <children>
+                                <Label text="Apply calibration">
+                                  <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                  </VBox.margin>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                  <children>
+                                    <RadioButton fx:id="m_radioT1Cal1" mnemonicParsing="false" selected="false" text="1" />
+                                    <RadioButton fx:id="m_radioT1Cal2" mnemonicParsing="false" text="2" />
+                                    <RadioButton fx:id="m_radioT1Cal3" mnemonicParsing="false" text="3" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane fx:id="m_AccTitledPane2" animated="false" text="Transducer 2">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="140.0" styleClass="anchor-pane">
+                          <children>
+                            <VBox layoutY="-3.0" prefWidth="146.0">
+                              <children>
+                                <Label text="Apply calibration">
+                                  <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                  </VBox.margin>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                  <children>
+                                    <RadioButton fx:id="m_radioT2Cal1" mnemonicParsing="false" selected="false" text="1" />
+                                    <RadioButton fx:id="m_radioT2Cal2" mnemonicParsing="false" text="2" />
+                                    <RadioButton fx:id="m_radioT2Cal3" mnemonicParsing="false" text="3" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane fx:id="m_AccTitledPane3" animated="false" expanded="false" text="Transducer 3">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="140.0" styleClass="anchor-pane">
+                          <children>
+                            <VBox layoutY="-3.0" prefWidth="146.0">
+                              <children>
+                                <Label text="Apply calibration">
+                                  <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                  </VBox.margin>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                  <children>
+                                    <RadioButton fx:id="m_radioT3Cal1" mnemonicParsing="false" selected="false" text="1" />
+                                    <RadioButton fx:id="m_radioT3Cal2" mnemonicParsing="false" text="2" />
+                                    <RadioButton fx:id="m_radioT3Cal3" mnemonicParsing="false" text="3" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane fx:id="m_AccTitledPane4" animated="false" text="Transducer 4">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="140.0" styleClass="anchor-pane">
+                          <children>
+                            <VBox layoutY="-3.0" prefWidth="146.0">
+                              <children>
+                                <Label text="Apply calibration">
+                                  <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                  </VBox.margin>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                  <children>
+                                    <RadioButton fx:id="m_radioT4Cal1" mnemonicParsing="false" selected="false" text="1" />
+                                    <RadioButton fx:id="m_radioT4Cal2" mnemonicParsing="false" text="2" />
+                                    <RadioButton fx:id="m_radioT4Cal3" mnemonicParsing="false" text="3" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane fx:id="m_AccTitledPane5" animated="false" expanded="false" text="Transducer 5">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="140.0" styleClass="anchor-pane">
+                          <children>
+                            <VBox layoutY="-3.0" prefWidth="145.0">
+                              <children>
+                                <Label text="Apply calibration">
+                                  <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                  </VBox.margin>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                  <children>
+                                    <RadioButton fx:id="m_radioT5Cal1" mnemonicParsing="false" selected="false" text="1" />
+                                    <RadioButton fx:id="m_radioT5Cal2" mnemonicParsing="false" text="2" />
+                                    <RadioButton fx:id="m_radioT5Cal3" mnemonicParsing="false" text="3" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane fx:id="m_AccTitledPane6" animated="false" expanded="false" text="Transducer 6">
+                      <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="140.0" styleClass="anchor-pane">
+                          <children>
+                            <VBox layoutY="-3.0" prefWidth="146.0">
+                              <children>
+                                <Label text="Apply calibration">
+                                  <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                  </VBox.margin>
+                                </Label>
+                                <HBox alignment="CENTER" spacing="20.0">
+                                  <children>
+                                    <RadioButton fx:id="m_radioT6Cal1" mnemonicParsing="false" selected="false" text="1" />
+                                    <RadioButton fx:id="m_radioT6Cal2" mnemonicParsing="false" text="2" />
+                                    <RadioButton fx:id="m_radioT6Cal3" mnemonicParsing="false" text="3" />
+                                  </children>
+                                </HBox>
+                              </children>
+                            </VBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                  </panes>
+                </Accordion>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="m_tabPaneMatrix" closable="true" disable="false" text="F/T Matrix Transducer t Calibration c">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <StackPane alignment="CENTER_LEFT" layoutY="2.0" prefHeight="281.0" prefWidth="708.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                  <children>
+                    <GridPane prefHeight="205.00009155273438" prefWidth="514.9999000000025">
+                      <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="LEFT" prefHeight="86.0" prefWidth="185.0" text="Fx" textAlignment="LEFT" textFill="#e41a1c" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                          <font>
+                            <Font size="13.0" fx:id="x2" />
+                          </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" font="$x2" prefHeight="86.0" prefWidth="185.0" text="Fy" textAlignment="LEFT" textFill="#ff7f00" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER_RIGHT" font="$x2" prefHeight="86.0" prefWidth="185.0" text="Fz" textAlignment="LEFT" textFill="#c2c200" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER_RIGHT" font="$x2" prefHeight="86.0" prefWidth="185.0" text="Tx" textAlignment="LEFT" textFill="#4daf4a" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label alignment="CENTER_RIGHT" font="$x2" prefHeight="86.0" prefWidth="185.0" text="Ty" textAlignment="LEFT" textFill="#377eb8" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label alignment="CENTER_RIGHT" font="$x2" prefHeight="86.0" prefWidth="185.0" text="Tz" textAlignment="LEFT" textFill="#984ea3" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label id="ThirteenPointText" alignment="CENTER" font="$x2" opacity="0.9" prefHeight="86.0" prefWidth="185.0" text="G0" textAlignment="LEFT" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        <Label id="ThirteenPointText" alignment="CENTER" font="$x2" prefHeight="86.0" prefWidth="185.0" text="G1" textAlignment="LEFT" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" font="$x2" prefHeight="86.0" prefWidth="185.0" text="G2" textAlignment="LEFT" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" font="$x2" prefHeight="86.0" prefWidth="185.0" text="G3" textAlignment="LEFT" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" font="$x2" prefHeight="86.0" prefWidth="185.0" text="G4" textAlignment="LEFT" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" font="$x2" prefHeight="86.0" prefWidth="185.0" text="G5" textAlignment="LEFT" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+                        <Label fx:id="m_lblfxg0" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyg0" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzg0" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxg0" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyg0" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzg0" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxg1" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyg1" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzg1" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxg1" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyg1" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzg1" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxg2" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyg2" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzg2" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxg2" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyg2" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzg2" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxg3" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyg3" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzg3" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxg3" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyg3" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzg3" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxg4" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyg4" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzg4" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxg4" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyg4" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzg4" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxg5" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyg5" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzg5" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxg5" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyg5" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzg5" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+                        <Label id="ThirteenPointText" alignment="CENTER" font="$x2" prefHeight="173.0" prefWidth="171.0" text="Gain" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label alignment="CENTER" font="$x2" prefHeight="173.0" prefWidth="171.0" text="Offset" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxGain" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyGain" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzGain" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxGain" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyGain" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzGain" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfyOffset" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfxOffset" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label id="m_lblfxg0" fx:id="m_lblfzOffset" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltxOffset" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltyOffset" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label id="m_lblfxg0" fx:id="m_lbltzOffset" alignment="CENTER" prefHeight="51.0" prefWidth="163.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                </StackPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+  <stylesheets>
+    <URL value="@WirelessFTDemo.css" />
+  </stylesheets>
+</AnchorPane>

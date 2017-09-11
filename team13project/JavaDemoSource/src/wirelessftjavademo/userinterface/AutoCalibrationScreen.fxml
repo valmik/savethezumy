@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.AutoCalibrationScreenController">
+   <children>
+      <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label prefHeight="81.0" text="Select a Transducer Input to calibrate, which Calibration entry to store the results in, the Input Range (in mV), and which type of Calibration to run. Follow any instructions given." wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <HBox alignment="CENTER" prefHeight="45.0" spacing="100.0">
+               <children>
+                  <ComboBox fx:id="m_cmbAutoCalTrans" onAction="#m_cmbAutoCalTrans_Changed" promptText="Transducer #">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Item 1" />
+                           <String fx:value="Item 2" />
+                           <String fx:value="Item 3" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="237.0" spacing="20.0">
+                     <children>
+                        <Label text="Calibration:">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="m_rbAutoCal1" mnemonicParsing="false" onAction="#m_rbAutoCalTransCalChanged" selected="true" text="1">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="m_rbAutoCal2" mnemonicParsing="false" onAction="#m_rbAutoCalTransCalChanged" text="2">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="m_rbAutoCal3" mnemonicParsing="false" onAction="#m_rbAutoCalTransCalChanged" text="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="28.0" prefWidth="399.0" spacing="206.0">
+               <children>
+                  <Button fx:id="m_btnAutoCalibrate" mnemonicParsing="false" onAction="#m_btnAutoCalibratePressed" text="Auto-Calibrate">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="m_btnExtCalibrate" mnemonicParsing="false" onAction="#m_btnExtCalibratePressed" text="External-Calibrate">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TextArea fx:id="m_txtAreaInstructions" disable="true" editable="false" prefHeight="99.0" prefWidth="399.0" wrapText="true">
+               </TextArea>
+            <HBox fx:id="m_hBoxEntry" alignment="CENTER" prefWidth="400.0" spacing="10.0">
+               <children>
+                  <Label fx:id="m_labelInputRange" disable="true" prefHeight="30.0" prefWidth="221.0" text="+/- Input Range (mV):" />
+                  <TextField fx:id="m_textFieldInputRange" disable="true" prefHeight="30.0" prefWidth="106.0" />
+                  <Label fx:id="m_labelDataEntry" disable="true" prefHeight="30.0" prefWidth="91.0" text="Value (V):" />
+                  <TextField fx:id="m_textFieldDataEntry" disable="true" prefHeight="30.0" prefWidth="105.0">
+                     </TextField>
+                  <Button fx:id="m_btnContinue" disable="true" mnemonicParsing="false" onAction="#m_btnContinuePressed" prefHeight="30.0" prefWidth="111.0" text="Continue">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <ProgressBar fx:id="m_progressAutoCal" onDragDetected="#m_btnAutoCalibratePressed" prefHeight="18.0" prefWidth="697.0" progress="0.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

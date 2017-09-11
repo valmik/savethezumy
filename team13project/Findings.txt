@@ -1,0 +1,79 @@
+To start program:
+roscd savethezumy/src
+python main_UR5.py
+
+
+roslaunch ati_wnet_ft ft.launch
+roslaunch savethezumy run_all.launch
+roslaunch ur_modern_driver ur5_bringup_joint_limited.launch robot_ip:=192.168.1.222
+roscd savethezumy/src
+python main_UR5.py
+
+
+USEFUL FILE PATHS:
+- /home/team13/team13project/src/savethezumy
+- /home/team13/team13project/src/ati_wnet_ft
+- /home/team13/ur_ws/src/universal_robot 
+
+CONNECT TO AUTO ETHERNET! dumb ass
+
+MAKE FUNCTION EXECUTABLE!: chmod +x *.py
+
+Upgrading the UR5 files on the computer to 1.1.6 from 1.0.2 allowed us to use the limited motion version of moveit without errors.
+
+Limited sets joints to only move -pi to pi instead of -2pi to 2pi, this supposedly makes moveit behave better.
+
+Gazebo lets you simulate the robot. This publishes the same as if the robot was running, and you can visualize the movements without breaking stuff.
+
+/ur_ws/src/unviersal_robot/readme.md has useful instructions for starting moveit, simulations, rviz.
+
+Launching limited sim, limited moveit, and rviz:
+roslaunch ur_gazebo ur5.launch limited:=true
+roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch sim:=true limited:=true
+roslaunch ur5_moveit_config moveit_rviz.launch config:=true
+
+Starting up limited robot comms, limited moveit, and rviz
+YOU MUST ENABLE ROBOT ON CONTROLLER.
+roslaunch ur_modern_driver ur5_bringup_joint_limited.launch robot_ip:=192.168.1.222
+roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch limited:=true
+roslaunch ur5_moveit_config moveit_rviz.launch config:=true 
+
+Force sensor, a grad student wrote doc showing how to get data out, need his code.
+
+SRDF file defines all the joints and joint groups.
+
+Trying to make an startRobotSim file that starts all the roslaunches. Can someone make it so it can actually run all 3 in parallel?
+
+To run our test code rosrun savethezumy path_test_ur5.py
+
+ISSUES/WHAT WE NEED HELP ON:
+
+1) Force Sensor hook up
+2) running test_move.py (sudo rosdep init)
+3) Orietation constraints in MoveIt
+4) What is frame_id in MoveIt?
+5) Command to set planning attempts in MoveIt
+
+ANSWERS
+
+1) ur_modern_driver used by test_move.py! Get Dexter to chage it!
+2) Shivani will get code from group with Zumy pickup
+
+ee_link touching ar_marker_2 on base to base transform:
+- Translation: [-0.215, 0.191, 0.012]
+- Rotation: in Quaternion [0.614, -0.373, -0.588, -0.371]
+            in RPY (radian) [-2.642, 1.533, -0.609]
+            in RPY (degree) [-151.395, 87.838, -34.915]
+
+Usefull commands/topics:
+-rosrun tf tf_echo
+-lookupTransform()
+-/joint_states
+-/tf
+
+
+MAIN TASKS CHRIS:
+
+1) Make subscribers
+2) Alter F/T Sensor files for continuous data streaming to topic
+3) Buy correct size bolts to not mess up sensor

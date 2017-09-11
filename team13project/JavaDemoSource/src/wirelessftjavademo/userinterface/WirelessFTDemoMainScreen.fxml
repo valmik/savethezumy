@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="m_anchorPaneTop" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.WirelessFTDemoMainScreenController">
+    <children>
+        <VBox minHeight="22.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <MenuBar style="-fx-text-fill: white;">
+                    <menus>
+                        <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="File">
+                            <items>
+                                <MenuItem fx:id="m_menuItemSD" mnemonicParsing="false" onAction="#openSDWindow" text="Extract MicroSD Data" />
+                                <MenuItem fx:id="m_menuItemClose" mnemonicParsing="false" onAction="#OnCloseRequest" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Tools">
+                            <items>
+                                <MenuItem fx:id="m_menuItemFirmwareUpgrade" disable="true" mnemonicParsing="false" onAction="#openFileUploadWindow" text="File Upload" />
+                                <MenuItem fx:id="m_menuItemCalibration" disable="true" mnemonicParsing="false" onAction="#openCalibrationWindow" text="Calibration" />
+                            </items>
+                        </Menu>
+                  <Menu mnemonicParsing="false" text="Advanced">
+                    <items>
+                        <MenuItem fx:id="m_menuItemAutoCalibration" disable="true" mnemonicParsing="false" onAction="#openAutoCalWindow" text="Voltage Calibration" />
+                    </items>
+                  </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#openAboutWindow" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </VBox>
+        <AnchorPane id="anchorPaneTwo" fx:id="m_anchorPaneTwo" layoutY="38.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefHeight="724.0" prefWidth="771.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="38.0">
+            <children>
+                <VBox id="dataVBox" fx:id="m_dataVBox" layoutX="4.0" layoutY="9.0" maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="208.0" prefHeight="655.0" prefWidth="255.0" spacing="3.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="9.0">
+                    <children>
+                        <Label minHeight="20.0" prefHeight="20.0" prefWidth="229.0" text="Wireless F/T Addr or Name">
+                            <font>
+                                <Font size="14.0" fx:id="x4" />
+                            </font>
+                        </Label>
+                          <TextField fx:id="m_txtFieldSensorHostName" alignment="CENTER_LEFT" editable="true" onKeyReleased="#txtFieldSensorHostNameEnter" prefWidth="200.0" style="-fx-border-color: transparent transparent gray transparent;&#10;-fx-background-insets: 0;" text="">
+                              <VBox.margin>
+                                  <Insets bottom="5.0" />
+                              </VBox.margin>
+                          </TextField>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" spacing="4.0">
+                     <children>
+                          <Button fx:id="m_btnDiscover" minWidth="112.0" mnemonicParsing="false" onAction="#discoverButtonPressed" prefHeight="25.0" prefWidth="130.0" text="Discover..." textAlignment="CENTER" />
+                          <Button fx:id="m_btnConnect" contentDisplay="LEFT" focusTraversable="false" minWidth="112.0" mnemonicParsing="false" onAction="#connectButtonPressed" prefHeight="25.0" prefWidth="130.0" style="-fx-background-radius: 3;&#10;-fx-background-insets: 0 0 -2 0, 0, 0, 0;" text="Connect" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+                          <HBox prefWidth="208.0" style="-fx-border-color: transparent transparent gray transparent;">
+                              <children>
+                                  <TextField fx:id="m_txtFilePath" prefHeight="25.0" prefWidth="140.0" style="-fx-border-color: transparent;&#10;-fx-background-insets: 0;" HBox.hgrow="ALWAYS">
+                                      <HBox.margin>
+                                          <Insets right="3.0" />
+                                      </HBox.margin>
+                                  </TextField>
+                                  <Button fx:id="m_btnDots" mnemonicParsing="false" onAction="#chooseDataCollectionFilePressed" style="-fx-background-radius: 3;&#10;-fx-background-insets: 0 0 -2 0, 0, 0, 0;" text="...">
+                                      <HBox.margin>
+                                          <Insets bottom="5.0" />
+                                      </HBox.margin>
+                                  </Button>
+                              </children>
+                          </HBox>
+                          <Button fx:id="m_btnCollectData" disable="true" focusTraversable="false" mnemonicParsing="false" onAction="#collectDataButtonPressed" prefHeight="25.0" prefWidth="230.0" style="-fx-background-radius: 3;&#10;-fx-background-insets: 0 0 -2 0, 0, 0, 0;" text="Collect Data">
+                              <VBox.margin>
+                                  <Insets top="5.0" />
+                              </VBox.margin>
+                          </Button>
+                  <HBox prefWidth="193.0">
+                     <children>
+                        <Button fx:id="m_btnApplyRate" disable="true" minWidth="100.0" mnemonicParsing="false" onAction="#m_btnApplyRatePressed" prefHeight="25.0" prefWidth="122.0" text="Apply Rate:" />
+                        <TextField fx:id="m_applyRate" disable="true" minWidth="65.0" onAction="#m_ApplyRateChanged" prefHeight="27.0" prefWidth="80.0" />
+                        <Label minWidth="33.0" prefHeight="27.0" prefWidth="33.0" text="Hz" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="28.0" prefWidth="218.0">
+                     <children>
+                        <Label font="$x4" prefHeight="20.0" prefWidth="75.0" text="Data Type:" />
+                        <ToggleButton id="m_radioFTData" fx:id="m_toggleFTData" disable="true" minWidth="51.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" selected="false" style="" text="FT" visible="true">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="m_toggleGroupGageOrFT" />
+                           </toggleGroup>
+                           <HBox.margin>
+                              <Insets fx:id="1x" right="5.0" />
+                           </HBox.margin>
+                        </ToggleButton>
+                        <ToggleButton id="m_radioGageData" fx:id="m_toggleGageData" disable="true" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" selected="false" style="" text="Gage" toggleGroup="$m_toggleGroupGageOrFT" />
+                     </children>
+                  </HBox>
+                          <HBox prefHeight="22.0">
+                              <children>
+                                  <Circle fx:id="m_batteryLED" fill="BLACK" radius="9.0" strokeType="INSIDE">
+                                      <stroke>
+                                          <Color blue="0.376" green="0.376" red="0.376" fx:id="x3" />
+                                      </stroke>
+                                      <HBox.margin>
+                                          <Insets right="5.0" fx:id="x1" />
+                                      </HBox.margin>
+                                  </Circle>
+                                  <Label prefWidth="208.0" text="Battery" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle fx:id="m_externalPowerLED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label prefWidth="208.0" text="External Power" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle fx:id="m_wifiLED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label prefWidth="208.0" text="WLAN" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="23.0" prefWidth="218.0">
+                              <children>
+                                  <Circle id="m_transducer1Status" fx:id="m_transducer1LED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label fx:id="m_lblTransducer1" prefWidth="208.0" text="Transducer 1" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle id="m_transducer2Status" fx:id="m_transducer2LED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label fx:id="m_lblTransducer2" prefWidth="208.0" text="Transducer 2" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle id="m_transducer3Status" fx:id="m_transducer3LED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label fx:id="m_lblTransducer3" prefWidth="208.0" text="Transducer 3" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle id="m_transducer4Status" fx:id="m_transducer4LED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label fx:id="m_lblTransducer4" prefWidth="208.0" text="Transducer 4" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle id="m_transducer5Status" fx:id="m_transducer5LED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label fx:id="m_lblTransducer5" prefWidth="208.0" text="Transducer 5" />
+                              </children>
+                          </HBox>
+                          <HBox prefHeight="22.0" prefWidth="185.0">
+                              <children>
+                                  <Circle id="m_transducer6Status" fx:id="m_transducer6LED" fill="BLACK" radius="9.0" stroke="$x3" strokeType="INSIDE" HBox.margin="$x1" />
+                                  <Label fx:id="m_lblTransducer6" prefWidth="208.0" text="Transducer 6" />
+                              </children>
+                          </HBox>
+                  <CheckBox fx:id="m_chkShowPacketStats" mnemonicParsing="false" onAction="#ShowPacketStatsChanged" prefHeight="17.0" prefWidth="253.0" text="Show Packet Statistics" />
+                  <VBox fx:id="m_vBoxPacketStats" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefWidth="188.0">
+                           <children>
+                              <Label minWidth="100.0" prefHeight="17.0" prefWidth="160.0" text="Packets:" />
+                              <Label fx:id="m_DisplayPackets" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="96.0" prefHeight="17.0" prefWidth="160.0" text="Packet Rate (Hz):" />
+                              <Label fx:id="m_DisplayRate" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="97.0" prefHeight="17.0" prefWidth="160.0" text="Clock Offset (mS):" />
+                              <Label fx:id="m_DisplayLatency" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="100.0" prefWidth="160.0" text="Drop Events:" />
+                              <Label fx:id="m_DisplayDrops" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="100.0" prefWidth="160.0" text="Packets Dropped:" />
+                              <Label fx:id="m_DisplayPktDrops" alignment="CENTER_RIGHT" cache="true" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="100.0" prefWidth="160.0" text="Drop Rate (%):" />
+                              <Label fx:id="m_DisplayDropRate" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="100.0" prefWidth="160.0" text="Out-of-orders:" />
+                              <Label fx:id="m_DisplayOutOfOrders" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <Label minWidth="100.0" prefWidth="160.0" text="Duplicates:" />
+                              <Label fx:id="m_DisplayDups" alignment="CENTER_RIGHT" cache="true" prefHeight="14.0" prefWidth="110.0">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                    </children>
+                </VBox>
+                <ListView fx:id="m_listLogEvents" focusTraversable="false" layoutX="14.0" layoutY="606.0" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="68.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                <GridPane fx:id="m_graphGrid" layoutX="270.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="647.0" prefWidth="510.0" AnchorPane.bottomAnchor="77.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <VBox fx:id="m_sensorPanelBox1" fillWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+                        <VBox fx:id="m_sensorPanelBox2" fillWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="510.0" prefWidth="510.0" />
+                  <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+    <stylesheets>
+        <URL value="@WirelessFTDemo.css" />
+    </stylesheets>
+</AnchorPane>

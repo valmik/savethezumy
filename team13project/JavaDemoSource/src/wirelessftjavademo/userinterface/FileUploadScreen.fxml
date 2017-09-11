@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.io.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="185.0" prefWidth="662.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.FileUploadScreenController">
+  <children>
+    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="6.0" prefHeight="135.0" prefWidth="640.0" spacing="12.0">
+      <children>
+          <Label id="progressLabel" fx:id="m_lblProgress" contentDisplay="CENTER" prefHeight="22.0" prefWidth="629.0" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+        <HBox minHeight="22.0" prefHeight="25.0" prefWidth="-1.0" style="-fx-border-color: transparent transparent gray transparent;">
+          <children>
+            <TextField fx:id="m_txtFilePath" prefHeight="27.0" prefWidth="605.0" style="-fx-border-color: transparent;">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+            <Button fx:id="m_btnChooseFile" mnemonicParsing="false" onAction="#chooseFiles" prefHeight="25.0" prefWidth="47.0" text="...">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+          </children>
+          <padding>
+            <Insets />
+          </padding>
+        </HBox>
+        <Button fx:id="m_btnUpload" defaultButton="true" mnemonicParsing="false" onAction="#startFileUpload" prefHeight="25.0" prefWidth="642.0" text="Upload">
+          <VBox.margin>
+            <Insets top="5.0" />
+          </VBox.margin>
+        </Button>
+      </children>
+    </VBox>
+    <ProgressBar fx:id="m_progressUpload" layoutX="14.0" layoutY="153.0" prefHeight="18.0" prefWidth="640.0" progress="0.0" />
+  </children>
+  <stylesheets>
+    <URL value="@WirelessFTDemo.css" />
+  </stylesheets>
+</AnchorPane>

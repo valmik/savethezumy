@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="264.0" prefWidth="688.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.FileExtractScreenController">
+  <children>
+    <Label layoutX="14.0" layoutY="29.0" prefHeight="19.0" prefWidth="324.0" text="File(s) to Extract...">
+      <font>
+        <Font size="13.0" fx:id="x1" />
+      </font>
+    </Label>
+    <Label font="$x1" layoutX="356.0" layoutY="29.0" prefHeight="19.0" prefWidth="316.0" text="Destination Folder" />
+    <Label layoutX="359.0" layoutY="106.0" prefHeight="16.0" prefWidth="326.0" text="*Files are stored in .csv format">
+      <font>
+        <Font size="11.0" fx:id="x2" />
+      </font>
+    </Label>
+    <ProgressBar id="m_progressUpload" fx:id="m_progressBar" layoutX="10.0" layoutY="231.0" prefHeight="18.0" prefWidth="668.0" progress="0.0" />
+    <VBox layoutX="14.0" layoutY="65.0" prefHeight="66.0" prefWidth="324.0" spacing="14.0">
+      <children>
+        <HBox minHeight="22.0" prefHeight="25.0" prefWidth="-1.0" style="-fx-border-color: transparent transparent gray transparent;">
+          <children>
+            <TextField id="m_txtFilePath" fx:id="m_txtFiles" prefHeight="27.0" prefWidth="309.0" style="-fx-border-color: transparent;" />
+            <Button id="m_btnChooseFile" fx:id="m_btnChooseFiles" mnemonicParsing="false" onAction="#chooseFiles" text="..." />
+          </children>
+          <padding>
+            <Insets />
+          </padding>
+        </HBox>
+        <Button id="m_btnUpload" fx:id="m_btnExtract" defaultButton="true" mnemonicParsing="false" onAction="#extractFiles" prefHeight="25.0" prefWidth="322.0" text="Extract File(s)*">
+          <VBox.margin>
+            <Insets top="5.0" />
+          </VBox.margin>
+        </Button>
+      </children>
+    </VBox>
+    <HBox layoutX="355.0" layoutY="63.0" minHeight="22.0" prefHeight="25.0" prefWidth="318.0" style="-fx-border-color: transparent transparent gray transparent;">
+      <children>
+        <TextField id="m_txtFilePath" fx:id="m_txtDest" prefHeight="27.0" prefWidth="298.0" style="-fx-border-color: transparent;" />
+        <Button id="m_btnChooseFile" fx:id="m_btnChooseDest" mnemonicParsing="false" onAction="#chooseDestinationFolder" text="..." />
+      </children>
+      <padding>
+        <Insets />
+      </padding>
+    </HBox>
+      <Label layoutX="18.0" layoutY="147.0" prefHeight="57.0" prefWidth="657.0" text="This screen allows you to select a file in internal Wnet binary format, and convert it to a .csv file that can be read by common software, for example Microsoft Excel." wrapText="true" />
+    <Label fx:id="m_lblProgress" alignment="CENTER_RIGHT" font="$x2" layoutX="-13.0" layoutY="204.0" prefHeight="16.0" prefWidth="689.0" text="" textAlignment="RIGHT" />
+  </children>
+  <stylesheets>
+    <URL value="@WirelessFTDemo.css" />
+  </stylesheets>
+</AnchorPane>

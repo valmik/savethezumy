@@ -1,0 +1,104 @@
+/**
+ * Wireless F/T Demo CSS.
+ */
+root {
+    display: block;
+}
+
+.button {
+    -fx-background-radius: 3;
+    -fx-background-insets: 0 0 -2 0, 0, 0, 0;
+}
+
+.text-field {
+    -fx-border-color: transparent transparent gray transparent;
+    -fx-background-insets: 0;
+}
+
+.accordion {
+    -fx-box-border: white;
+}
+
+.titled-pane {
+    /*-fx-color: white;*/
+}
+
+.title {
+    -fx-color: #d0d0d0;
+}
+
+.titled-pane:focused {
+    -fx-text-fill: white;
+}
+
+.titled-pane:focused > .title {
+    -fx-color: -fx-focus-color;
+}
+
+.tab {
+    -fx-background-radius: 2 2 0 0;
+    -fx-background-insets: 0 1 -2 0;
+    -fx-tab-min-width: 0;
+}
+
+.tab:disabled .tab-label{
+    -fx-text-fill: white;
+}
+
+.tab:disabled {
+    -fx-background-color: transparent;
+    -fx-opacity: 1;
+}
+
+#listVewUnits {
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.toggle-button {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ToggleButtonSkin";
+    -fx-background-insets: 0 0 -2 0, 0, 1, 1;
+    -fx-background-radius: 2;
+    -fx-text-fill: -fx-text-base-color;
+}
+ 
+.toggle-button:focused {
+    -fx-color: -fx-focused-base;
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -2 0, 0, 1, 1;
+    -fx-background-radius: 2;
+}
+ 
+.toggle-button:hover {
+    -fx-color: -fx-hover-base;
+}
+ 
+.toggle-button:armed {
+    -fx-color: -fx-pressed-base;
+    -fx-background-insets: 0 0 -2 0, 0, 1, 1;
+}
+ 
+.toggle-button:selected {
+    -fx-background-color:
+        -fx-shadow-highlight-color,
+        linear-gradient(to bottom, derive(#4ac0ff,-90%) 0%, derive(#4ac0ff,-60%) 100%),
+        linear-gradient(to bottom, derive(#4ac0ff,-60%) 0%, derive(#4ac0ff,-35%) 50%, derive(#4ac0ff,-30%) 98%, derive(#4ac0ff,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -2 0, 0, 1, 1;
+    /* TODO: -fx-text-fill should be derived */
+    -fx-text-fill: -fx-light-text-color;
+}
+ 
+.toggle-button:selected:focused {
+    -fx-color: -fx-focused-base;
+    -fx-background-color:
+        -fx-focus-color,
+        linear-gradient(to bottom, derive(#4ac0ff,-90%) 0%, derive(#4ac0ff,-60%) 100%),
+        linear-gradient(to bottom, derive(#4ac0ff,-60%) 0%, derive(#4ac0ff,-35%) 50%, derive(#4ac0ff,-30%) 98%, derive(#4ac0ff,-50%) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,0.3) 100%);
+    -fx-background-insets: 0 0 -2 0, 0, 1, 1;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 3px;
+}

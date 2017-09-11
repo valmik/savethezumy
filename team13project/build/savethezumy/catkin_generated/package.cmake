@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "savethezumy")
+set(savethezumy_MAINTAINER "team13 <team13@todo.todo>")
+set(savethezumy_DEPRECATED "")
+set(savethezumy_VERSION "0.0.0")
+set(savethezumy_BUILD_DEPENDS "rospy" "sensor_msgs" "std_msgs")
+set(savethezumy_RUN_DEPENDS "rospy" "sensor_msgs" "std_msgs")
+set(savethezumy_BUILDTOOL_DEPENDS "catkin")

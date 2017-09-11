@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wirelessftjavademo.userinterface.AboutScreenController">
+   <children>
+      <VBox alignment="CENTER" layoutX="8.0" layoutY="7.0" spacing="3.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="22.0" prefWidth="377.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefWidth="190.0" text="Component" underline="true" />
+                  <Label contentDisplay="CENTER" prefWidth="318.0" text="Version" underline="true" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label prefWidth="190.0" text="Demo" />
+                  <Label fx:id="m_versionDemo" prefWidth="318.0" text="Demo version" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label prefWidth="190.0" text="Firmware" />
+                  <Label fx:id="m_versionFirmware" prefWidth="318.0" text="Firmware version" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label prefWidth="190.0" text="WLAN" />
+                  <Label fx:id="m_versionWlan" prefWidth="318.0" text="WLAN version" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label prefWidth="190.0" text="CPLD 0" />
+                  <Label fx:id="m_versionCpld0" prefWidth="318.0" text="CPLD 0 version" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Label prefWidth="190.0" text="CPLD 1" />
+                  <Label fx:id="m_versionCpld1" prefWidth="318.0" text="CPLD 1 version" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
